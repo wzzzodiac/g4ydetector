@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Fun Detector</title>
+  <title>Gay Detector (100% real)</title>
 
   <style>
     body {
@@ -148,17 +148,59 @@
       from { opacity: 0.45; }
       to { opacity: 1; }
     }
+
+    @media (max-width: 600px) {
+  body {
+    padding: 18px;
+    overflow: auto;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 360px;
+    padding: 22px;
+    border-radius: 24px;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  #scanner {
+    width: min(78vw, 280px);
+    height: min(78vw, 280px);
+    border-radius: 22px;
+  }
+
+  #scanner::before {
+    font-size: 3.3rem;
+  }
+
+  #detect-btn {
+    width: 100%;
+    padding: 15px 26px;
+    font-size: 1rem;
+  }
+
+  .button-box {
+    width: 80%;
+  }
+
+  #result {
+    font-size: 1.2rem;
+  }
+}
   </style>
 </head>
 
 <body>
   <div class="card">
-    <h1>Fun Detector</h1>
+    <h1>Gay Detector (100% real)</h1>
 
     <div id="scanner"></div>
 
     <div class="button-box">
-      <button id="detect-btn">Detectar</button>
+      <button id="detect-btn">Detect</button>
     </div>
 
     <div id="result"></div>
@@ -166,11 +208,13 @@
 
   <script>
     const responses = [
-      "respuesta 1",
-      "respuesta 2",
-      "respuesta 3",
-      "respuesta 4",
-      "respuesta 5"
+      "u r the gayest nigga on this earth wtf",
+      "u r 50% gay 50% lesbian",
+      "u not gay, but it might be a mistake",
+      "freddy mercury would be jealous of how gay u are fr",
+      "not gay, i guess, try again",
+      "why are u even trying this, its fckng obvious",
+      "u re normal",
     ];
 
     const scanner = document.getElementById("scanner");
@@ -179,7 +223,7 @@
 
     function startScan() {
       button.disabled = true;
-      result.textContent = "Escaneando...";
+      result.textContent = "Escaning...";
       result.classList.add("loading");
 
       const oldLaser = scanner.querySelector(".laser");
